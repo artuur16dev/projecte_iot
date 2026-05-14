@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSchool IoT – Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="SmartSchool IoT">
+          <rect width="32" height="32" rx="8" fill="#01696f"/>
+          <rect x="7" y="7" width="8" height="8" rx="2" fill="white" opacity="0.9"/>
+          <rect x="17" y="7" width="8" height="8" rx="2" fill="white" opacity="0.6"/>
+          <rect x="7" y="17" width="8" height="8" rx="2" fill="white" opacity="0.6"/>
+          <rect x="17" y="17" width="8" height="8" rx="2" fill="white" opacity="0.9"/>
+        </svg>
+        <span>SmartSchool IoT</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-tab="ambient">Aules</button>
+        <button class="nav-btn" data-tab="assistencia">Assistència</button>
+        <button class="nav-btn" data-tab="alertes">Alertes</button>
+      </nav>
+      <button class="theme-btn" data-theme-toggle aria-label="Canviar tema">🌙</button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="tab-ambient" class="tab active">
+      <h1 class="page-title">Estat de les aules</h1>
+      <p class="page-desc">Última lectura ambiental per aula. S'actualitza cada 10 segons.</p>
+      <div id="aules-grid" class="grid">Carregant...</div>
+    </section>
+
+    <section id="tab-assistencia" class="tab">
+      <h1 class="page-title">Assistència del dia</h1>
+      <p class="page-desc">Registres RFID d'avui.</p>
+      <div class="table-wrap">
+        <table id="taula-assistencia">
+          <thead><tr><th>Hora</th><th>Aula</th><th>Alumne</th><th>UID</th></tr></thead>
+          <tbody><tr><td colspan="4">Carregant...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="tab-alertes" class="tab">
+      <h1 class="page-title">Alertes recents</h1>
+      <p class="page-desc">Últimes 20 alertes ambientals registrades.</p>
+      <div id="llista-alertes">Carregant...</div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
